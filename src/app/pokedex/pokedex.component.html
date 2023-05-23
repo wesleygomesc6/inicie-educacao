@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="titulo-card">
+        <h3 class="nome-codigo">{{ pokemon.nome[0].toUpperCase()+pokemon.nome.substring(1) }}</h3>
+        <span class="nome-codigo">#{{ pokemon.codigo }}</span>
+    </div>
+    <div class="imagem-pokemon">
+        <img width="170px" src="{{pokemon.imagem}}" />
+    </div>
+    <div class="informacoes-pokemon">
+        <span>Altura:</span>
+        <span>{{ pokemon.informacoes.altura }}cm</span>
+    </div>
+    <div class="informacoes-pokemon">
+        <span>Peso:</span>
+        <span>{{ pokemon.informacoes.peso }}kg</span>
+    </div>
+</div>

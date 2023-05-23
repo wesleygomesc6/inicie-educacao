@@ -1,0 +1,40 @@
+.card {
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 0px rgba(50, 50, 50, 0.22);
+    background-color: white;
+    padding: 5px;
+    margin: 20px;
+    width: 200px;
+    height: 300px;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.titulo-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h3.nome-codigo {
+    margin: 0px;
+}
+
+.imagem-pokemon {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+.informacoes-pokemon {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}

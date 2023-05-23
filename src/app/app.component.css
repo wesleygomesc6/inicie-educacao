@@ -1,0 +1,113 @@
+.conteudo {
+    display: flex;
+    width: 100%;
+}
+
+.conteudo-left {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pokemon {
+    color: #EA686D;
+}
+
+.logo {
+    width: 100px;
+    margin-top: 20px;
+}
+
+.conteudo-left-center {
+    width: 80%;
+}
+
+.conteudo-right-center {
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+}
+
+.conteudo-right-center>img {
+    border-radius: 10px;
+    margin: 5px;
+    height: 250px;
+}
+
+.img-center {
+    padding-top: 20px;
+}
+
+.img-center>img {
+    border-radius: 10px;
+    margin: 5px;
+    height: 250px;
+}
+
+
+.titulo-paginacao {
+    width: 90%;
+    margin: auto;
+}
+
+.pokedex {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.conteudo-titulo-paginacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.paginacao {
+    margin: auto 5px;
+    display: flex;
+}
+
+.circulo:hover {
+    cursor: pointer;
+}
+
+.circulo {
+    margin: auto 5px;
+    display: flex;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: #EA686D;
+}
+
+.input-buscar {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    padding: 5px;
+    box-shadow: 5px 5px 10px 0px rgba(50, 50, 50, 0.22);
+}
+
+.botao-buscar {
+    width: 15%;
+    height: 40px;
+    background-color: #EA686D;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    padding: 5px;
+    box-shadow: 5px 5px 10px 0px rgba(234, 104, 109, 0.22);
+}
