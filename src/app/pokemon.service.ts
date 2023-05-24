@@ -24,5 +24,4 @@ export class PokemonService {
     getPokemonsPaginate(url: string) {
         return this.http.get<RespApiPokemon>(url)
     }
-
 }

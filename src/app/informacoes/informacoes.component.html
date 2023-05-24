@@ -1,0 +1,43 @@
+<div class="informacoes">
+    <div class="informacoes-left-right">
+        <div class="informacoes-left-center">
+            <img class="logo" src="../../assets/inicielogocolorida.png" />
+            <h1>{{ pokemon.nome[0].toUpperCase()+pokemon.nome.substring(1) }}</h1>
+            <div class="codigo-tipo">
+                <div>
+                    <h3>Código: # </h3>
+                    <span> {{ pokemon.codigo }}</span>
+                </div>
+                <div>
+                    <h3>Tipo: </h3>
+                    <span class="tipo"> {{ pokemon.tipo[0].toUpperCase()+pokemon.tipo.substring(1) }}</span>
+                </div>
+            </div>
+            <div class="descricao-pokemon">
+                <h2>Descrição</h2>
+                <span>{{pokemon.descricao}}</span>
+            </div>
+            <div class="informacoes-pokemon">
+                <h2>Informações</h2>
+                <div class="altura-peso">
+                    <div class="altura">
+                        <h3>Altura:</h3>
+                        <span> {{ pokemon.informacoes.altura }}cm </span>
+                    </div>
+                    <div class="altura">
+                        <h3>Peso:</h3>
+                        <span> {{ pokemon.informacoes.peso }}kg </span>
+                    </div>
+                </div>
+                <div class="detalhes">
+                    <app-progressbar [informacoes]="pokemon.informacoes"></app-progressbar>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="informacoes-left-right">
+        <div class="informacoes-right-center ">
+            <img width="80%" src="{{pokemon.imagem}}" />
+        </div>
+    </div>
+</div>

@@ -3,21 +3,12 @@
     width: 100%;
 }
 
-.conteudo-left {
+.conteudo-left-right {
     width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.conteudo-right {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .pokemon {
@@ -36,6 +27,7 @@
 .conteudo-right-center {
     margin-top: 20px;
     display: flex;
+    justify-content: space-between;
     width: 80%;
 }
 
@@ -61,7 +53,7 @@
     margin: auto;
 }
 
-.pokedex {
+.pokedex-informacoes {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +71,11 @@
     display: flex;
 }
 
+.seta {
+    color: white;
+    margin: auto;
+}
+
 .circulo:hover {
     cursor: pointer;
 }
@@ -86,28 +83,32 @@
 .circulo {
     margin: auto 5px;
     display: flex;
+    justify-content: center;
+    text-align: center;
     border-radius: 100%;
     width: 40px;
     height: 40px;
     background-color: #EA686D;
 }
 
-.input-buscar {
+.input-botao {
+    border: none;
+    padding: 5px;
+}
+.input {
+    outline-color: rgba(234, 104, 109, 0.22);
     width: 50%;
     height: 30px;
     border-radius: 5px 0px 0px 5px;
-    border: none;
-    padding: 5px;
     box-shadow: 5px 5px 10px 0px rgba(50, 50, 50, 0.22);
 }
 
-.botao-buscar {
+.buscar {
     width: 15%;
     height: 40px;
     background-color: #EA686D;
     color: white;
     border-radius: 0px 5px 5px 0px;
-    border: none;
-    padding: 5px;
     box-shadow: 5px 5px 10px 0px rgba(234, 104, 109, 0.22);
+
 }

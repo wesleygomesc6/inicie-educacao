@@ -5,11 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import { InformacoesComponent } from './informacoes/informacoes.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokedexComponent
+    PokedexComponent,
+    InformacoesComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,

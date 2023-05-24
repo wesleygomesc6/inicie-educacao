@@ -9,9 +9,11 @@ import { PokemonService } from './pokemon.service';
 })
 export class AppComponent implements OnInit {
   title = 'inicie-educacao';
+  pokemon: Pokemon = new Pokemon;
   pokemons: Pokemon[] = [];
   pokemonsRespApi: any[] = [];
   paginacao: any = {};
+  informacoes: boolean = false;
 
   constructor(private pokemonService: PokemonService) {
   }
@@ -51,7 +53,7 @@ export class AppComponent implements OnInit {
         pokemon.nome = r.name;
         pokemon.tipo = r.types[0].type.name;
         pokemon.imagem = r.sprites.other.home.front_default;
-        pokemon.descricao = r.location_area_encounters;
+        pokemon.descricao = r.moves.map((item: any) => ' ' + item.move.name).toString();
         pokemon.informacoes = {
           altura: r.height * 10,
           peso: r.weight / 10,
@@ -64,11 +66,14 @@ export class AppComponent implements OnInit {
         this.ordenarArray()
       })
     })
-
   }
 
   ordenarArray() {
     this.pokemons.sort((a, b) => a.codigo - b.codigo)
+  }
+  exibirInformacoes(pok: Pokemon) {
+    this.pokemon = pok;
+    this.informacoes = true;
   }
 
   nextPage() {

@@ -1,0 +1,47 @@
+.progress-bar {
+  --progressVida: 0;
+  --progressVelocidade: 0;
+  --progressDefesa: 0;
+  --progressAtaque: 0;
+  height: 20px;
+  padding: 5px;
+  margin: 5px 0px;
+  width: 60%;
+  background-color: #ccc;
+  display: flex;
+  border-radius: 3px;
+}
+
+.progress-bar::before {
+  content: "";
+  transition: all 0.2s ease;
+}
+
+.progress-bar.vida::before {
+  background-color: #C4F789;
+  width: calc(var(--progressVida) * 1%);
+}
+
+.progress-bar.velocidade::before {
+  background-color: #F7802A;
+  width: calc(var(--progressVelocidade) * 1%);
+}
+
+.progress-bar.defesa::before {
+  background-color: #49D0B0;
+  width: calc(var(--progressDefesa) * 1%);
+}
+
+.progress-bar.ataque::before {
+  background-color: #EA686D;
+  width: calc(var(--progressAtaque) * 1%);
+}
+
+.infs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.infs>h3 {
+  margin: 5px;
+}
