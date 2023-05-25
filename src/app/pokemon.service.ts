@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { RespApiPokemon } from 'src/models/RespApiPokemon';
 
 @Injectable({
@@ -23,5 +23,13 @@ export class PokemonService {
 
     getPokemonsPaginate(url: string) {
         return this.http.get<RespApiPokemon>(url)
+    }
+
+    getDescricao(url: string): Observable<any> {
+        return this.http.get<any>(url)
+            .pipe(
+                map(res => res.flavor_text_entries)
+            )
+
     }
 }

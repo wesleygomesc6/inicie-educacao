@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/models/Pokemon';
 import { PokemonService } from './pokemon.service';
 
@@ -20,6 +20,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllPokemons()
+  }
+
+  buscarPokemon() {
+    const valor: any = document.getElementById('nomePokemon') as HTMLElement;
+    this.pokemonService.getPokemon(valor.value).subscribe(
+      res => this.exibirInformacoes(this.converterRespostaEmPokemon(res))
+    )
+    this.limparBusca()
+  }
+
+  limparBusca() {
+    let l: any = document.getElementById('nomePokemon') as HTMLElement;
+    l.value = ''
+
   }
 
   getInformacoes(stats: any[], filtro: string): number {
@@ -48,24 +62,28 @@ export class AppComponent implements OnInit {
 
     this.pokemonsRespApi.forEach(n => {
       this.pokemonService.getPokemon(n.name).subscribe((r: any) => {
-        let pokemon: Pokemon = new Pokemon();
-        pokemon.codigo = r.id;
-        pokemon.nome = r.name;
-        pokemon.tipo = r.types[0].type.name;
-        pokemon.imagem = r.sprites.other.home.front_default;
-        pokemon.descricao = r.moves.map((item: any) => ' ' + item.move.name).toString();
-        pokemon.informacoes = {
-          altura: r.height * 10,
-          peso: r.weight / 10,
-          vida: this.getInformacoes(r.stats, 'hp'),
-          defesa: this.getInformacoes(r.stats, 'defense'),
-          velocidade: this.getInformacoes(r.stats, 'speed'),
-          ataque: this.getInformacoes(r.stats, 'attack')
-        }
-        this.pokemons.push(pokemon);
+        this.pokemons.push(this.converterRespostaEmPokemon(r));
         this.ordenarArray()
       })
     })
+  }
+
+  converterRespostaEmPokemon(pokemon: any): Pokemon {
+    let pokemonConvertido: Pokemon = new Pokemon();
+    pokemonConvertido.codigo = pokemon.id;
+    pokemonConvertido.nome = pokemon.name;
+    pokemonConvertido.tipo = pokemon.types[0].type.name;
+    pokemonConvertido.imagem = pokemon.sprites.other.home.front_default;
+    pokemonConvertido.descricao = pokemon.moves.map((item: any) => ' ' + item.move.name).toString();
+    pokemonConvertido.informacoes = {
+      altura: pokemon.height * 10,
+      peso: pokemon.weight / 10,
+      vida: this.getInformacoes(pokemon.stats, 'hp'),
+      defesa: this.getInformacoes(pokemon.stats, 'defense'),
+      velocidade: this.getInformacoes(pokemon.stats, 'speed'),
+      ataque: this.getInformacoes(pokemon.stats, 'attack')
+    }
+    return pokemonConvertido;
   }
 
   ordenarArray() {

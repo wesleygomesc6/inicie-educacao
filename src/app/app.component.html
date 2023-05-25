@@ -1,26 +1,27 @@
 <div class="conteudo">
-    <div class="conteudo-left-right">
+    <img class="logo-responsiva" src="../assets/inicielogocolorida.png" />
+    <div class="conteudo-left-right texto">
         <div class="conteudo-left-center">
             <img class="logo" src="../assets/inicielogocolorida.png" />
             <h1>Explore o mundo dos <span class="pokemon">Pokémons</span></h1>
             <h3>Descubra todas as espécies de pokémons</h3>
             <div class="inputs">
-                <input type="text" class="input-botao input" placeholder="Digite o nome do pokémon">
-                <button class="input-botao buscar" type="button">Buscar</button>
+                <input type="text" id="nomePokemon" class="input-botao input" placeholder="Digite o nome do pokémon">
+                <button class="input-botao buscar" type="button" (click)="buscarPokemon()">Buscar</button>
             </div>
         </div>
     </div>
-    <div class="conteudo-left-right">
+    <div class="conteudo-left-right imagens">
         <div class="conteudo-right-center">
-            <img src="../assets/img1.png" />
-            <div class="img-center">
-                <img src="../assets/img2.png" />
+            <img class="img-pokemons" src="../assets/img2.png" />
+            <div class="img-cetro">
+                <img class="img-pokemons" src="../assets/img1.png" />
             </div>
-            <img src="../assets/img3.png" />
+            <img class="img-pokemons" src="../assets/img3.png" />
         </div>
     </div>
 </div>
-<div class="titulo-paginacao">
+<div *ngIf="!informacoes" class="titulo-paginacao">
     <div class="conteudo-titulo-paginacao">
 
         <h3>Pokedex</h3>
@@ -42,12 +43,13 @@
         </div>
     </div>
 </div>
-<div class="pokedex-informacoes">
-    <div *ngFor="let pok of pokemons">
-        <app-pokedex [pokemon]="pok" (click)="exibirInformacoes(pok)"></app-pokedex>
-    </div>
+<div class="btn-voltar" *ngIf="informacoes == true" (click)="informacoes = false">
+    <button type="button">Voltar</button>
 </div>
 <div class="pokedex-informacoes">
+    <div *ngFor="let pok of pokemons">
+        <app-pokedex *ngIf="!informacoes" [pokemon]="pok" (click)="exibirInformacoes(pok)"></app-pokedex>
+    </div>
     <div *ngIf="informacoes == true">
         <app-informacoes [pokemon]="pokemon"></app-informacoes>
     </div>

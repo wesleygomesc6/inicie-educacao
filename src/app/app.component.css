@@ -1,18 +1,47 @@
 .conteudo {
+    margin: 20px 40px;
     display: flex;
-    width: 100%;
+    justify-content: space-between;
 }
 
-.conteudo-left-right {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
+@media (max-width: 750px) {
+    .conteudo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+    }
 }
+
+@media (max-width: 750px) {
+    .imagens {
+        order: 1;
+    }
+
+    .texto {
+        order: 2;
+    }
+
+}
+
 
 .pokemon {
     color: #EA686D;
+    text-shadow: 1px 1px 2px #EA686D, 0 0 5em #EA686D, 0 0 0.7em #EA686D;
+    ;
+}
+
+@media (min-width: 750px) {
+    .logo-responsiva {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .logo {
+        display: none;
+    }
 }
 
 .logo {
@@ -20,37 +49,53 @@
     margin-top: 20px;
 }
 
-.conteudo-left-center {
-    width: 80%;
-}
-
 .conteudo-right-center {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    width: 80%;
 }
 
-.conteudo-right-center>img {
+.img-pokemons {
     border-radius: 10px;
     margin: 5px;
     height: 250px;
 }
 
-.img-center {
+.img-cetro {
     padding-top: 20px;
 }
 
-.img-center>img {
-    border-radius: 10px;
-    margin: 5px;
-    height: 250px;
+@media (max-width: 600px) {
+    .img-pokemons {
+        height: 200px;
+    }
 }
-
 
 .titulo-paginacao {
     width: 90%;
     margin: auto;
+}
+
+@media (max-width: 750px) {
+    .titulo-paginacao {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+.btn-voltar {
+    margin: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-voltar>button {
+    width: 100px;
+    height: 40px;
+    background-color: #EA686D;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .pokedex-informacoes {
@@ -95,20 +140,29 @@
     border: none;
     padding: 5px;
 }
+
+@media (max-width: 750px) {
+    .input {
+        width: 250px;
+    }
+
+}
+
 .input {
     outline-color: rgba(234, 104, 109, 0.22);
-    width: 50%;
+    width: 75%;
     height: 30px;
     border-radius: 5px 0px 0px 5px;
     box-shadow: 5px 5px 10px 0px rgba(50, 50, 50, 0.22);
 }
 
+
 .buscar {
-    width: 15%;
+    width: 20%;
     height: 40px;
+    cursor: pointer;
     background-color: #EA686D;
     color: white;
     border-radius: 0px 5px 5px 0px;
     box-shadow: 5px 5px 10px 0px rgba(234, 104, 109, 0.22);
-
 }
